@@ -16,7 +16,7 @@ public class ThreadPorta extends Thread {
         
         anda();
         try {
-            System.out.println("Pessoa #" + pessoa + " chegou na porta");
+            System.out.println("" + pessoas[pessoa-1] + " chegou na porta");
             porta.acquire();
             Thread.sleep((int)(Math.random() * 1000) + 1000); //vai levar de 1 a 2 segundos pra passar
         } catch (InterruptedException exception) {
@@ -29,7 +29,7 @@ public class ThreadPorta extends Thread {
 
     public void anda() {
         int distancia = 0;
-        System.out.println("Pessoa #" + pessoa + " começou a andar!");
+        System.out.println("" + pessoas[pessoa-1] + " começou a andar!");
 
         while(distancia < 200) {
             distancia += (int) (Math.random() * 2) + 4;
@@ -43,6 +43,6 @@ public class ThreadPorta extends Thread {
     }
 
     public void pessoaPassou(){
-        System.out.println("Pessoa #"+ pessoa +" passou a porta!");
+        System.out.println("" + pessoas[pessoa-1] +" passou a porta!");
     }
 }
